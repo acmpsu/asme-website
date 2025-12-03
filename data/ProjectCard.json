@@ -1,0 +1,28 @@
+[
+  {
+    "title": "Project Title",
+    "description": "Porject Description Porject Description Porject Description Porject Description Porject Description ",
+    "imageUrl": "/images/header1.jpg",
+    "members": [
+      { "name": "First Lastname", "role": "Chair" },
+      { "name": "First Lastname", "role": "Chair" },
+      { "name": "First Lastname", "role": "Chair" },
+      { "name": "First Lastname", "role": "Chair" }
+    ]
+  },
+  {
+    "title": "Project Title",
+    "description": "Porject Description Porject Description Porject Description Porject Description Porject Description ",
+    "imageUrl": "/images/header1.jpg",
+    "members": [
+      { "name": "First Lastname", "role": "Chair" },
+      { "name": "First Lastname", "role": "Chair" },
+      { "name": "First Lastname", "role": "Chair" },
+      { "name": "First Lastname", "role": "Chair" },
+      { "name": "First Lastname", "role": "Chair" },
+      { "name": "First Lastname", "role": "Chair" },
+      { "name": "First Lastname", "role": "Chair" },
+      { "name": "First Lastname", "role": "Chair" }
+    ]
+  }
+]
