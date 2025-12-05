@@ -5,6 +5,7 @@ import Image from "next/image"; // For showing the logo image
 import Link from "next/link"; // For making clickable links
 import { usePathname } from "next/navigation"; // To know which page we are on
 import { Jost } from "next/font/google"; // To use a nice font called "Jost"
+import { responsiveClampCustom } from "../utils/responsive"; // For responsive sizing
 
 // Set up the Jost font so we can use it in our header
 const jost = Jost({
@@ -53,7 +54,7 @@ export default function Header() {
         borderBottom: isHomePage ? "none" : "1px solid #1E24B8",
         // Make the height responsive: smallest is 96.5px, biggest is 180px
         // It changes based on screen size (12.76vw means 12.76% of screen width)
-        height: "clamp(96.5px, 12.76vw, 180px)",
+        height: responsiveClampCustom(180, 96.5, 180),
         // Make the header take up the full width of the screen
         width: "100%",
         // Use flexbox to arrange things inside
@@ -76,7 +77,7 @@ export default function Header() {
           // Make width = full width minus padding on both sides
           // Padding is responsive: smallest is 16px, biggest is 64px on each side
           // So we subtract clamp(16px, 4.23vw, 64px) * 2 (left + right)
-          width: "calc(100% - clamp(32px, 8.46vw, 128px))",
+          width: `calc(100% - ${responsiveClampCustom(128, 32, 128)})`,
           // Allow the container to shrink if screen is too small
           minWidth: 0,
         }}
@@ -90,7 +91,7 @@ export default function Header() {
           priority // Load this image first because it's important
           style={{
             // Make height responsive: smallest is 40px, biggest is 113px
-            height: "clamp(40px, 7.47vw, 113px)",
+            height: responsiveClampCustom(113, 40, 113),
             // Keep the width proportional to height (auto = figure it out)
             width: "auto",
             // Make it a block element
@@ -114,7 +115,7 @@ export default function Header() {
                 // Use the Jost font we set up earlier
                 fontFamily: "var(--font-jost)",
                 // Make font size responsive: smallest is 12px, biggest is 34.575px
-                fontSize: "clamp(12px, 2.29vw, 34.575px)",
+                fontSize: responsiveClampCustom(34.575, 12, 34.575),
                 // Make text normal weight (not bold)
                 fontWeight: 400,
                 // If this is the active page, underline it. Otherwise, no underline
@@ -122,9 +123,9 @@ export default function Header() {
                 // Make underline white if it's active, invisible if not
                 textDecorationColor: active ? "#FFF" : "transparent",
                 // Make the underline a little bit below the text (responsive)
-                textUnderlineOffset: "clamp(2px, 0.26vw, 4px)",
+                textUnderlineOffset: responsiveClampCustom(4, 2, 4),
                 // Make the underline thickness responsive
-                textDecorationThickness: "clamp(1px, 0.13vw, 2px)",
+                textDecorationThickness: responsiveClampCustom(2, 1, 2),
                 // Don't let the text wrap to a new line - keep it on one line
                 whiteSpace: "nowrap",
               }}

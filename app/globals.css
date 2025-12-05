@@ -35,3 +35,7 @@ body {
 main {
   flex: 1;
 }
+
+.join-button:hover {
+  background-color: #2a3d5f !important;
+}
